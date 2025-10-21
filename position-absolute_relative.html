@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POSITION: ABSOLUTE + RELATIVE</title>
+    <style>
+      /* mini reset */
+
+      body,
+      h2,
+      p {
+        margin: 0;
+      }
+
+      body {
+        background-color: #d4d4d4;
+      }
+
+      .card {
+        width: 300px;
+        height: 350px;
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 15px;
+        padding: 0 0 2em 0;
+        /* fornisco position: relative per ancorare la pill! */
+        position: relative;
+      }
+
+      .card img {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+
+      .card p:first-of-type {
+        /* primo <p> dentro .card */
+        font-weight: bold;
+      }
+
+      .card button {
+        background-color: orange;
+        color: white;
+        border-radius: 15px;
+        margin: 1em 0;
+      }
+
+      #card-container {
+        margin-top: 3em;
+        padding: 0 2em;
+      }
+
+      .new {
+        display: inline-block;
+        color: white;
+        background-color: red;
+        padding: 0.25em 0.5em;
+        border-radius: 15px;
+        transform: rotate(34deg);
+        /* fornisco position absolute */
+        position: absolute;
+        /* a questo punto possiamo manipolare la sua posizione
+        con top/bottom/left/right, però i riferimenti sarebbero i
+        bordi della pagina! se invece fornissi position: relative 
+        a un suo contenitore, quel contenitore diventa il suo punto
+        di riferimento per top, bottom, left e right. */
+        top: -9px;
+        right: -26px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>POSITION - ABSOLUTE + RELATIVE</h2>
+    </header>
+    <main>
+      <p>
+        Il fatto che position: absolute prenda di default come riferimenti per
+        top/bottom/left/right i bordi della finestra è molto comodo in certe
+        situazioni, come ad es. ancorare un timer in alto a destra nella pagina.
+        In altre situazioni, tuttavia, scopriamo che questi riferimenti possono
+        essere imprecisi: per esempio quando dobbiamo volutamente
+        sovrapporre/inserire un elemento su di un altro.
+      </p>
+      <p>
+        Perchè la regola dice: un elemento dotato di position: absolute cercherà
+        tra i suoi genitori/nonni/avi etc. un elemento dotato di position:
+        relative; se lo trova, lo prenderà come riferimento. Se non lo trova,
+        prenderà come riferimento i bordi della finestra.
+      </p>
+      <section id="card-container">
+        <article class="card">
+          <img src="https://placebear.com/300/200" alt="orsetto" />
+          <p>Orso Bruno</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident
+            vel perferendis harum earum in reiciendis fuga aliquid porro sit
+            iusto minus accusantium ipsa laborum, atque quos qui nemo quaerat
+            dolorum.
+          </p>
+          <button>AGGIUNGI AL CART</button>
+          <div class="new">
+            <p>NEW!</p>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
