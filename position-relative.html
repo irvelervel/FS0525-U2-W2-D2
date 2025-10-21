@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POSITION: RELATIVE</title>
+    <style>
+      body {
+        background-color: #d4d4d4;
+      }
+
+      .relative {
+        background-color: rgb(53, 53, 245);
+        color: white;
+        position: relative;
+        /* top: 25px; */
+        /* left: 50px; */
+        /* oppure, shorthand: */
+        inset: 25px 0 0 50px; /* stesso utilizzo di margin/padding */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>POSITION - RELATIVE</h2>
+    </header>
+    <main>
+      <p>
+        Position "relative" è un valore che invece va applicato a mano.
+        Permetterà a quell'elemento di posizionarsi "relativamente" a quella che
+        sarebbe stata la sua normale posizione se avesse avuto position: static.
+        È quindi possibile scostarlo dalla sua posizione originale tramite 4
+        proprietà: top, bottom, left, right.
+      </p>
+    </main>
+    <article>
+      <p class="relative">
+        Questo paragrafo è stato posizionato con position: relative
+      </p>
+    </article>
+  </body>
+</html>
