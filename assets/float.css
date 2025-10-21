@@ -1,0 +1,44 @@
+/* FLOAT è una famosa proprietà CSS appartenente a CSS2 */
+/* il suo scopo è quello di permettere un "galleggiamento" di un elemento
+al fine di porsi a destra o a sinistra rispetto ad un'altra porzione di
+contenuto */
+
+/* una cosa importante da ricordare è che float si applica solo ad UN
+elemento, il resto dei contenuti fluirà automaticamente nella parte opposta */
+
+/* ...questo accadrà fino al raggiungimento di un elemento dotato di una
+proprietà chiamata "clear", che invece servirà a ripristinare il tradizionale
+flow degli elementi da quel punto in poi */
+
+body {
+  background-color: #bdbdbd;
+}
+
+footer p {
+  background-color: white;
+  text-align: center;
+}
+
+#left {
+  /* applico all'aside di sx una proprietà float con valore "left" */
+  float: left;
+}
+
+#right {
+  /* applico all'aside di sx una proprietà float con valore "right" */
+  float: right;
+}
+
+/* tutto il resto del contenuto confluirà automaticamente sul lato opposto,
+ovvero il lato dx! questo porterà ad avere non solo la section disposta a 
+dx, ma anche tutti gli elementi successivi, compreso il footer etc. */
+
+/* per RIPRISTINARE il normale flow e comportamento degli elementi da un
+certo punto in poi, è necessario assegnare manualmente una proprietà chiamata
+"clear", con un valore pari al valore del float dato in precedenza */
+
+/* io voglio che dal footer in poi la situazioni si normalizzi: e quindi... */
+
+footer {
+  clear: both;
+}

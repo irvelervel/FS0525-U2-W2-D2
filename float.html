@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proprietà FLOAT</title>
+    <link rel="stylesheet" href="./assets/float.css" />
+  </head>
+  <body>
+    <header>
+      <h1>FLOAT IN CSS</h1>
+    </header>
+    <main>
+      <aside id="left">
+        <img src="https://placebear.com/200/200" alt="teddy" />
+      </aside>
+      <!-- se vogliamo anche un orso sulla dx, ricordiamoci una regoletta:
+       tutti gli elementi dotati di "float" vanno inseriti in HTML
+       PRIMA degli elementi non dotati di float -->
+      <aside id="right">
+        <img src="https://placebear.com/200/200" alt="teddy" />
+      </aside>
+      <section>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. A odio
+          distinctio officiis, deleniti dolore impedit consequuntur nostrum
+          possimus blanditiis, doloremque optio debitis similique vitae
+          praesentium voluptatum. Impedit saepe nesciunt voluptas. Lorem ipsum
+          dolor, sit amet consectetur adipisicing elit. A odio distinctio
+          officiis, deleniti dolore impedit consequuntur nostrum possimus
+          blanditiis, doloremque optio debitis similique vitae praesentium
+          voluptatum. Impedit saepe nesciunt voluptas.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <p>EPICODE - <span id="year"></span></p>
+    </footer>
+    <script>
+      const yearSpan = document.getElementById('year')
+      yearSpan.innerText = new Date().getFullYear()
+    </script>
+  </body>
+</html>
