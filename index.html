@@ -277,7 +277,9 @@
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <button onclick="hideCard(event)" class="btn btn-primary">
+                  NASCONDI CARD
+                </button>
               </div>
             </div>
           </div>
@@ -294,7 +296,9 @@
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <button onclick="hideCard(event)" class="btn btn-primary">
+                  NASCONDI CARD
+                </button>
               </div>
             </div>
           </div>
@@ -311,7 +315,9 @@
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <button onclick="hideCard(event)" class="btn btn-primary">
+                  NASCONDI CARD
+                </button>
               </div>
             </div>
           </div>
@@ -328,7 +334,9 @@
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <button onclick="hideCard(event)" class="btn btn-primary">
+                  NASCONDI CARD
+                </button>
               </div>
             </div>
           </div>
@@ -345,7 +353,9 @@
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <button onclick="hideCard(event)" class="btn btn-primary">
+                  NASCONDI CARD
+                </button>
               </div>
             </div>
           </div>
@@ -362,7 +372,9 @@
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <button onclick="hideCard(event)" class="btn btn-primary">
+                  NASCONDI CARD
+                </button>
               </div>
             </div>
           </div>
@@ -379,7 +391,9 @@
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <button onclick="hideCard(event)" class="btn btn-primary">
+                  NASCONDI CARD
+                </button>
               </div>
             </div>
           </div>
@@ -396,18 +410,33 @@
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <button onclick="hideCard(event)" class="btn btn-primary">
+                  NASCONDI CARD
+                </button>
               </div>
             </div>
           </div>
         </div>
         <!-- ALTRA ROW -->
         <h2 class="text-center mt-3">COLONNE GESTITE DALLA RIGA</h2>
+        <div class="text-center">
+          <div class="btn-group my-3" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-primary px-3 dog-button">
+              1
+            </button>
+            <button type="button" class="btn btn-primary px-3 dog-button">
+              2
+            </button>
+            <button type="button" class="btn btn-primary px-3 dog-button">
+              3
+            </button>
+          </div>
+        </div>
         <div
           class="row g-3 row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4"
         >
           <div class="col">
-            <div class="card">
+            <div class="card dog-card">
               <img
                 src="https://placedog.net/400/400"
                 class="card-img-top"
@@ -424,7 +453,7 @@
             </div>
           </div>
           <div class="col">
-            <div class="card">
+            <div class="card dog-card">
               <img
                 src="https://placedog.net/400/400"
                 class="card-img-top"
@@ -441,7 +470,7 @@
             </div>
           </div>
           <div class="col">
-            <div class="card">
+            <div class="card dog-card">
               <img
                 src="https://placedog.net/400/400"
                 class="card-img-top"
@@ -635,23 +664,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-    <!-- script per far funzionare il live toast -->
-    <script>
-      const toastTrigger = document.getElementById('liveToastBtn')
-      const toastLiveExample = document.getElementById('liveToast')
-
-      if (toastTrigger) {
-        const toastBootstrap =
-          bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-        toastTrigger.addEventListener('click', () => {
-          toastBootstrap.show()
-        })
-      }
-
-      const burn = function () {
-        // :O
-        document.querySelector('body').innerHTML = ''
-      }
-    </script>
+    <script src="./script/index.js"></script>
   </body>
 </html>
