@@ -4,11 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bootstrap demo</title>
+    <!-- QUESTO È IL LINK PER IL FOGLIO CSS DI BOOTSTRAP -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
+    />
+    <!-- MA SE VOLETE ANCHE LE ICONE, VI SERVE ANCHE QUEST'ALTRO LINK -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
   </head>
   <body>
@@ -198,11 +204,61 @@
           <!-- FINE COL -->
         </div>
         <!-- FINE ROW -->
+        <div class="row justify-content-center mt-3">
+          <div class="col col-12 col-md-6 text-center">
+            <button type="button" class="btn btn-info" id="liveToastBtn">
+              Show live toast
+            </button>
+
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+              <div
+                id="liveToast"
+                class="toast"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+              >
+                <div class="toast-header">
+                  <img
+                    src="https://placebear.com/50/50"
+                    class="rounded me-2"
+                    alt="..."
+                  />
+                  <strong class="me-auto">Bootstrap</strong>
+                  <small>11 mins ago</small>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="toast"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="toast-body">
+                  Hello, world! This is a toast message.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="row my-3">
           <div class="col text-center">
             <div class="spinner-border text-success" role="button">
               <span class="visually-hidden">Loading...</span>
             </div>
+          </div>
+        </div>
+        <!-- ALTRA ROW -->
+        <div class="row justify-content-center">
+          <div class="col col-12 text-center">
+            <!-- bottone per azionare il modale -->
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#modale1"
+            >
+              APRI MODALE
+            </button>
           </div>
         </div>
         <!-- ALTRA ROW -->
@@ -487,6 +543,90 @@
             </div>
           </div>
         </div>
+
+        <div class="row my-3">
+          <div class="col">
+            <h2>ISCRIZIONE NEWSLETTER</h2>
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"
+                  >Indirizzo email</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="mario@rossi.com"
+                  required
+                />
+                <div id="emailHelp" class="form-text">
+                  We'll never share your email with anyone else.
+                </div>
+              </div>
+              <div class="mb-3 form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="exampleCheck1"
+                  required
+                />
+                <label class="form-check-label" for="exampleCheck1"
+                  >Accetto i termini & condizioni</label
+                >
+              </div>
+              <button type="submit" class="btn btn-success">Invia</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- inserisco qua l'HTML del modale -->
+        <!-- attenzione al valore dell'attributo id, perchè lo dovete -->
+        <!-- riportare come valore di data-bs-target del bottone che lo
+        azionerà, con la sintassi: data-bs-target="#IDMODALE" -->
+        <div
+          class="modal fade"
+          id="modale1"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Brucia il computer!
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                Sei sicuro di mandare in fiamme tutto il tuo lavoro?
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  <!-- questo è un bottone che grazie a data-bs-dismiss
+                chiuderà il modale se lo premuto -->
+                  No grazie
+                </button>
+                <button type="button" class="btn btn-danger" onclick="burn()">
+                  <i class="bi bi-fire me-1"></i>VAI<i
+                    class="bi bi-fire ms-1"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- fine modale -->
+        </div>
         <!-- FINE CONTAINER -->
       </div>
     </main>
@@ -495,5 +635,23 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <!-- script per far funzionare il live toast -->
+    <script>
+      const toastTrigger = document.getElementById('liveToastBtn')
+      const toastLiveExample = document.getElementById('liveToast')
+
+      if (toastTrigger) {
+        const toastBootstrap =
+          bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+        toastTrigger.addEventListener('click', () => {
+          toastBootstrap.show()
+        })
+      }
+
+      const burn = function () {
+        // :O
+        document.querySelector('body').innerHTML = ''
+      }
+    </script>
   </body>
 </html>
